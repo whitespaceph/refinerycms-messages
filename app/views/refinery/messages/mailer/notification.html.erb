@@ -1,0 +1,16 @@
+<%= t('.greeting') %>,<br/>
+<br/>
+<%= t('.you_recieved_new_message') %><br/>
+<br/>
+<%= t('.message_starts') %><br/>
+<br/>
+<%= t('.name', :default => t('activerecord.attributes.message.name')) %>: <%= @message.name %><br/>
+<%= t('.message', :default => t('activerecord.attributes.message.message')) %>: 
+<%= @message.message %>
+<br/>
+<%= t('.message_ends') %><br/>
+<br/>
+<%= t('.closing_line') %>,<br/>
+<%= Refinery::Core.site_name %><br/>
+<br/>
+<%= t('.ps_html') %>

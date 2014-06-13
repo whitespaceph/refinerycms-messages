@@ -1,0 +1,65 @@
+es:
+  refinery:
+    plugins:
+      messages:
+        title: Messages
+    messages:
+      messages:
+        new:
+          header_message: "Mil disculpas hay un pequeño problema."
+          message: "Los siguientes problemas necesitan ser corregidos:"
+          send: Enviar mensaje
+          privacy_policy: "Nosotros valoramos tu privacidad"
+      admin:
+        messages:
+          message:
+            move_message_to_closed: Cambiar esta consulta a cerrada
+            move_message_to_open: Cambiar esta consulta a abierta
+            read_message: Leer esta consulta
+            remove_message: "Estas seguro que quieres borrar esta consulta de '%{name}'?"
+            title: Messages
+          toggle_status:
+            closed: "La consulta '%{message}' esta cerrada"
+            reopened: "La consulta '%{message}' esta abierta"
+          index:
+            no_messages: No has recibido ninguna consulta aun.
+          show:
+            details: Detalles
+            click_to_email: Click al email
+            status: Estatus
+            open: Abierto
+            closed: Cerrado
+            age: Edad
+            actions: Acciones
+            back_to_all_messages: Regresar a todas las consultas
+            message: Message
+          submenu:
+            update_notified: "Actualizar a quien será notificado"
+            edit_confirmation_email: "Editar email de confirmación"
+        settings:
+          update:
+            updated: "'%{setting}' fue actualizado exitosamente."
+          notification_recipients_form:
+            settings_value_name: Mandar notificaciones a
+            explanation: "Cada vez que alguien se comunique con usted en su sitio web, Refinery enviara un correo electrónico respecto a esta nueva consulta."
+            hint: "Ingrese una dirección de correo. Ingrese la dirección de correo de las persona que vaya a ser notificada, si quiere que varias personas sean notificadas ingrese las direcciones de correo separadas por comas."
+            example: "Ejemplo: me@domain.com, friend@msn.com, workmate@work.com"
+          confirmation_email_form:
+            to: Para
+            from: De
+            subject: Asunto
+            click_to_edit_subject: Click aqui para modificar el asunto
+            explanation: "Cada vez que alguien se comunique con usted en su sitio web, Refinery enviara un correo electrónico respecto a esta nueva consulta."
+            below_edit_email_sent: "Abajo usted puede editar el email a donde la consulta será enviado."
+            the_customer_making_message: El cliente haciendo la consulta
+            message: Mensaje
+            note: "Nota: ingrese el texto %name% donde quiera que el nombre del cliente aparezca en el email"
+          subject_form:
+            subject_value_name: Asunto
+  activerecord:
+    models:
+      message: Message
+    attributes:
+      message:
+        name: Name
+        message: Message

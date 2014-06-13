@@ -1,0 +1,27 @@
+<%= render 'submenu' %>
+<div id='records'>
+  <% if searching? %>
+    <%= link_to t('cancel_search', :scope => 'refinery.admin.search'), refinery.messages_admin_messages_path, :class => "cancel-search" %>
+    <h2><%= t('results_for_html', :scope => 'refinery.admin.search', :query => h(params[:search])).html_safe %></h2>
+    <% if @messages.any? %>
+      <ul>
+        <%= render :partial => 'message', :collection => @messages %>
+      </ul>
+    <% else %>
+      <p><%= t('no_results', :scope => 'refinery.admin.search') %></p>
+    <% end %>
+  <% else %>
+    <% if @grouped_messages.any? -%>
+      <% @grouped_messages.each do |container| %>
+        <h3><%= l((message_group = container.last).first.created_at) %></h3>
+        <ul>
+          <%= render :partial => 'message', :collection => message_group %>
+        </ul>
+      <% end %>
+    <% else -%>
+      <p>
+        <strong><%= t('.no_spam') %></strong>
+      </p>
+    <% end -%>
+  <% end %>
+</div>

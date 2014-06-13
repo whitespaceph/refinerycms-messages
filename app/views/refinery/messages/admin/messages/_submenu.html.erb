@@ -1,0 +1,22 @@
+<div id='actions'>
+  <ul>
+    <% if ::Refinery::Messages::Admin::MessagesController.searchable? %>
+      <li>
+        <%= render '/refinery/admin/search', :url => refinery.messages_admin_messages_path %>
+      </li>
+    <% end %>
+    <li <%= "class='selected'" if params[:action] == "index" %>>
+      <%= link_to t('.inbox'), refinery.messages_admin_messages_path, :class => "email_icon" %>
+    </li>
+    <li>
+      <%= link_to t('.update_notified'),
+                    refinery.edit_messages_admin_setting_path(:message_notification_recipients, :dialog => true, :height => 300),
+                    :class => "user_comment_icon" %>
+    </li>
+    <li>
+      <%= link_to t('.edit_confirmation_email'),
+                  refinery.edit_messages_admin_setting_path(:message_confirmation_body, :dialog => true),
+                  :class => "edit_email_icon" %>
+    </li>
+  </ul>
+</div>
